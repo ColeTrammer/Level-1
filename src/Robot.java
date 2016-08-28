@@ -1,13 +1,11 @@
 
 public class Robot {
 
-	private int numberOfWheels;
 	private Knife knife;
 	private String name;
 	private boolean isEvil;
 
 	public Robot(boolean evil, String n, double sharpness) {
-		numberOfWheels = 4;
 		knife = new Knife(sharpness);
 		name = (n.charAt(0) + "").toUpperCase() + n.substring(1);
 		isEvil = evil;
