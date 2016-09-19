@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class JavaGUI implements ActionListener {
 
@@ -13,12 +14,12 @@ public class JavaGUI implements ActionListener {
 	JLabel label;
 	JButton button1;
 	JButton button2;
+	JTextField textfield;
 	
 	JavaGUI() {
 		frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
-		frame.setSize(800, 600);
 		
 		panel = new JPanel();
 		frame.add(panel);
@@ -34,13 +35,16 @@ public class JavaGUI implements ActionListener {
 		panel.add(button2);
 		button2.addActionListener(this);
 		
+		textfield = new JTextField(10);
+		panel.add(textfield);
+		
+		frame.setSize(800, 600);
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
-		System.out.println("A");
-		
+		System.out.println(textfield.getText());
 	}
 	
 	public static void main(String[] args) {
