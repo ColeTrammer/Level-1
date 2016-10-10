@@ -22,7 +22,6 @@ public class WackAMole implements ActionListener {
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel();
-		
 		setup();
 	}
 	
@@ -65,7 +64,6 @@ public class WackAMole implements ActionListener {
 		} else {
 			speak("wrong!");
 		}
-		
 	}
 	void speak(String words) {
 		try {
