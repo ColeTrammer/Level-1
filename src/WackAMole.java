@@ -11,20 +11,20 @@ public class WackAMole implements ActionListener {
 
 	JFrame frame;
 	JPanel panel;
-	
+
 	Random r;
 	JButton moleButton;
-	
+
 	public WackAMole() {
 		r = new Random();
-		
+
 		frame = new JFrame();
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		panel = new JPanel();
 		setup();
 	}
-	
+
 	void setup() {
 		frame.remove(panel);
 		panel = new JPanel();
@@ -32,27 +32,26 @@ public class WackAMole implements ActionListener {
 		frame.add(panel);
 		updateDisplay();
 	}
-	
+
 	void drawButtons(int n) {
 		moleButton = new JButton("mole!");
 		moleButton.addActionListener(this);
 		for (int i = 0; i < 24; i++) {
 			if (i == n) {
 				panel.add(moleButton);
-			}
-			else {
+			} else {
 				JButton tmp = new JButton();
 				tmp.addActionListener(this);
 				panel.add(tmp);
 			}
 		}
 	}
-	
+
 	void updateDisplay() {
 		drawButtons(r.nextInt(24));
 		frame.pack();
 	}
-	
+
 	public static void main(String[] args) {
 		new WackAMole();
 	}
@@ -65,6 +64,7 @@ public class WackAMole implements ActionListener {
 			speak("wrong!");
 		}
 	}
+
 	void speak(String words) {
 		try {
 			Runtime.getRuntime().exec("say " + words).waitFor();
@@ -72,5 +72,5 @@ public class WackAMole implements ActionListener {
 			e.printStackTrace();
 		}
 	}
-	
+
 }
